@@ -13,4 +13,5 @@ const Template: Story<ButtonProps> = (args) => <ButtonComponent {...args} />;
 export const Button = Template.bind({});
 Button.args = {
   children: 'text',
+  isRadius: false,
 };

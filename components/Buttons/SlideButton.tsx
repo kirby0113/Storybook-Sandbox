@@ -5,9 +5,10 @@ import styled from 'styled-components';
 export type SlideButtonProps = {
   children: ReactNode;
   color?: keyof typeof colors;
+  isRadius?: boolean;
   onClick: () => void;
 };
-const StyledSlideButton = styled.button<{ color: keyof typeof colors }>`
+const StyledSlideButton = styled.button<{ color: keyof typeof colors; isRadius: boolean }>`
   font-size:25px;
   padding:10px 20px;
   position:relative;
@@ -16,6 +17,7 @@ const StyledSlideButton = styled.button<{ color: keyof typeof colors }>`
   color ${colors['white'].light};
   background-color: ${({ color }) => colors[color].normal};
   border: solid 1px ${({ color }) => colors[color].normal};
+  border-radius:${({ isRadius }) => (isRadius ? '30px' : '0')};
   cursor:pointer;
   text-transform: uppercase;
   transition:all .3s;
@@ -46,9 +48,14 @@ const StyledSlideButton = styled.button<{ color: keyof typeof colors }>`
   }
 `;
 
-export const SlideButton = ({ children, color = 'primary', onClick }: SlideButtonProps) => {
+export const SlideButton = ({
+  children,
+  color = 'primary',
+  isRadius = false,
+  onClick,
+}: SlideButtonProps) => {
   return (
-    <StyledSlideButton color={color} onClick={onClick}>
+    <StyledSlideButton color={color} onClick={onClick} isRadius={isRadius}>
       {children}
     </StyledSlideButton>
   );

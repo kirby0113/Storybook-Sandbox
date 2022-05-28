@@ -16,4 +16,5 @@ const Template: Story<SlideButtonProps> = (args) => <SlideButtonComponent {...ar
 export const SlideButton = Template.bind({});
 SlideButton.args = {
   children: 'text',
+  isRadius: false,
 };
