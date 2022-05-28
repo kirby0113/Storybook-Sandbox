@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { colors } from '../constants/color';
+import { colors } from '../../constants/color';
 import styled from 'styled-components';
 
 export type ButtonProps = {
@@ -18,7 +18,6 @@ const StyledButton = styled.button<{ color: keyof typeof colors }>`
   border: solid 2px ${({ color }) => colors[color].dark};
   cursor:pointer;
   text-transform: uppercase;
-
 `;
 
 export const Button = ({ children, color = 'primary', onClick }: ButtonProps) => {
