@@ -8,7 +8,7 @@ export default {
   argTypes: {},
   decorators: [
     (Story) => (
-      <div style={{ width: '300px' }}>
+      <div style={{ width: '400px' }}>
         <Story />
       </div>
     ),
@@ -20,6 +20,5 @@ const Template: Story<CardProps> = (args) => <CardComponent {...args} />;
 export const Card = Template.bind({});
 Card.args = {
   caption: 'タイトル',
-  children: 'ボディ',
   image_url: '/images/test.jpg',
 };

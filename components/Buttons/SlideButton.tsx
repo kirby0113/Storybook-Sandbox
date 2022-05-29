@@ -13,7 +13,7 @@ const StyledSlideButton = styled.button<{ color: keyof typeof colors; isRadius: 
   padding:10px 20px;
   position:relative;
   font-weight:bold;
-  letter-spacing:3px;
+  letter-spacing:2px;
   color ${colors['white'].light};
   background-color: ${({ color }) => colors[color].normal};
   border: solid 1px ${({ color }) => colors[color].normal};
@@ -23,7 +23,6 @@ const StyledSlideButton = styled.button<{ color: keyof typeof colors; isRadius: 
   transition:all .3s;
   overflow:hidden;
   z-index:1;
-  animation-direction: reverse;
 
   &::before{
     content:"";
