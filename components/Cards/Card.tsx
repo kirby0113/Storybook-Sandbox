@@ -4,9 +4,9 @@ import { colors } from '../../constants/color';
 import { SlideButton } from '../Buttons/SlideButton';
 
 export type CardProps = {
-  caption?: string;
+  caption: string;
   image_url?: string;
-  color: keyof typeof colors;
+  color?: keyof typeof colors;
   onClick: () => void;
 };
 
